@@ -1,0 +1,22 @@
+name: Recreate wiki Changelog page on wiki changes
+
+on:
+  gollum:
+  workflow_dispatch:
+
+jobs:
+  create-wiki-summary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Check out wiki
+        uses: actions/checkout@v2
+        with:
+          repository: 'CrazyCloudCraft/changelog-into-wiki.wiki'
+          ref: 'master'
+          path: 'changelog-into-wiki.wiki'
+      - name: Update Changelog.md if needed
+        run: ./changelog-to-wiki.sh $GITHUB_WORKSPACE/changelog-into-wiki.wiki
+        working-directory: ./.github
