@@ -1,7 +1,7 @@
 name: Generate changelog
 on:
   gollum:
-   workflow_dispatch:
+  workflow_dispatch:
   #release:
    # types: [created, edited]
 
@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: BobAnkh/auto-generate-changelog@v1
+    - uses: BobAnkh/auto-generate-changelog@v1.2.2
       with:
         REPO_NAME: 'CrazyCloudCraft/changelog-into-wiki'
         ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
