@@ -28,7 +28,7 @@ for i in $(find . -name '*.md' \
 done
 ) > Changelog.md
 
-# Compare md5 sums
+# Compare md5 sumss
 new_md5=$(md5sum Changelog.md)
 
 echo "Old md5 change: $md5 ; New md5 change: $new_md5"
