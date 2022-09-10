@@ -1,7 +1,9 @@
 name: Generate changelog
 on:
-  release:
-    types: [created, edited]
+  gollum:
+   workflow_dispatch:
+  #release:
+   # types: [created, edited]
 
 jobs:
   generate-changelog:
