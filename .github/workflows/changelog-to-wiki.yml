@@ -18,5 +18,5 @@ jobs:
           ref: 'master'
           path: 'changelog-into-wiki.wiki'
       - name: Update Changelog.md if needed
-        run: ./changelog-to-wiki.sh $GITHUB_WORKSPACE/changelog-into-wiki.wiki
+        run: ./changelog-to-wiki.sh #$GITHUB_WORKSPACE/changelog-into-wiki.wiki
         working-directory: ./.github
